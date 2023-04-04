@@ -1,4 +1,0 @@
-PreCommit:
-  SlimLint:
-    enabled: false
-    command: ['bundle', 'exec', 'slim-lint']

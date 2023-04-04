@@ -1,3 +1,6 @@
+ci-setup:
+	bundle
+
 test:
 	bin/rails test
 

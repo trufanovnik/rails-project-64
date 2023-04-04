@@ -1,0 +1,26 @@
+name: Main
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # env:
+    #   RAILS_ENV: test
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '19'
+          cache: 'npm'
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - run: make ci-setup
+      - run: make check

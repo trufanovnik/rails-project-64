@@ -6,7 +6,6 @@ lint:
 	bundle exec slim-lint app/views/
 
 ci-setup:
-	npm ci
 	npm run build
 	bundle
 

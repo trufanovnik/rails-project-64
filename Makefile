@@ -6,7 +6,7 @@ lint:
 	bundle exec slim-lint app/views/
 
 ci-setup:
-	cp -n .env.example .env || true
+	cp -n .env.local .env || true
 	npm ci
 	npm run build
 	bundle

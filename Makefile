@@ -3,7 +3,7 @@ test:
 
 lint:
 	bundle exec rubocop
-	slim-lint app/views/
+	bundle exec slim-lint app/views/
 
 linter-code-fix:
 	bundle exec rubocop -A

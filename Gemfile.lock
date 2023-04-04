@@ -90,6 +90,8 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    faker (3.1.1)
+      i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -115,6 +117,9 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.18.0)
+    minitest-power_assert (0.3.1)
+      minitest
+      power_assert (>= 1.1)
     msgpack (1.7.0)
     net-imap (0.3.4)
       date
@@ -129,6 +134,7 @@ GEM
     nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
     pg (1.4.6)
+    power_assert (2.0.3)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -172,6 +178,14 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sentry-rails (5.8.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.8.0)
+    sentry-ruby (5.8.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+    slim (5.1.0)
+      temple (~> 0.10.0)
+      tilt (>= 2.0.6, < 2.2)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -182,7 +196,9 @@ GEM
     sqlite3 (1.6.2-x86_64-darwin)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    temple (0.10.0)
     thor (1.2.1)
+    tilt (2.1.0)
     timeout (0.3.2)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -215,12 +231,17 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  faker
   jbuilder
   jsbundling-rails
+  minitest-power_assert
   pg
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   selenium-webdriver
+  sentry-rails
+  sentry-ruby
+  slim
   sprockets-rails
   sqlite3
   stimulus-rails

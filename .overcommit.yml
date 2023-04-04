@@ -1,0 +1,4 @@
+PreCommit:
+  SlimLint:
+    enabled: false
+    command: ['slim-lint', 'app/views/'] # Invoke within Bundler context

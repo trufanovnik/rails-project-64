@@ -31,7 +31,7 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 
 # Slim for views
-gem 'slim'
+gem 'slim-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'

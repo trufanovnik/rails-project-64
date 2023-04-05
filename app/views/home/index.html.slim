@@ -2,17 +2,20 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
   .container-fluid
     a.navbar-brand.text-white href="#"
       | Hexlet Project
-    button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+    button.navbar-toggler type="button" data-bs-toggle="collapse";
+      data-bs-target="#navbarNav" aria-controls="navbarNav";
+      aria-expanded="false" aria-label="Toggle navigation"
       span.navbar-toggler-icon
-    .collapse.navbar-collapse#navbarNav.d-flex.flex-column style="height: 100%"
+    .collapse.navbar-collapse
       ul.navbar-nav.ms-auto
         li.nav-item
-          = link_to "Home", root_path, class: "nav-link"
+          = link_to 'Home', root_path, class: 'nav-link'
         li.nav-item
-          = link_to "Log in", new_user_session_path, class: "nav-link"
+          = link_to 'Log in', new_user_session_path, class: 'nav-link'
         li.nav-item
-          = link_to "Sign up", new_user_registration_path, class: "nav-link"
+          = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
         li.nav-item
-          = link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link"
+          = link_to 'Sign out', destroy_user_session_path,
+           method: :delete, class: 'nav-link'
 footer.footer.bg-dark.p-3.fixed-bottom.text-center
   span.text-white © 2023 By Trufanovnik

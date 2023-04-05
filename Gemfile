@@ -27,7 +27,7 @@ gem 'jsbundling-rails'
 gem 'minitest-power_assert'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
+gem 'turbo-rails', '~> 1.0.0'
 
 # SDK for this project
 gem 'sentry-rails'

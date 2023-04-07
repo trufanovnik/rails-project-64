@@ -29,6 +29,9 @@ gem 'minitest-power_assert'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails', '~> 1.0.0'
 
+#Simple form for devise views with bootstrap
+gem 'simple_form'
+
 # SDK for this project
 gem 'sentry-rails'
 gem 'sentry-ruby'

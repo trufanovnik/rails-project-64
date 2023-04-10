@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_07_124044) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_10_163621) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_comments", force: :cascade do |t|
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_07_124044) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category_id"
+    t.string "post_comment_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

@@ -1,6 +1,6 @@
 module Post
   class CommentsController < ApplicationController
-    before_action :authenticate_user!, except: %i[show]
+    before_action :authenticate_user!
     def create
       @post = Post.find(params[:post_id])
       @comment = @post.comments.build(comment_params)

@@ -1,14 +1,28 @@
-p style="color: green" = notice
+.container.mt-5
+  .row
+    .col
+      = link_to "Home", root_path
+      = render @post
+      = button_to 'Like', post_likes_path(@post), method: :post
+      - if current_user
+        - pre_like = @post.likes.find { |like| like.user_id == current_user.id }
+        - if pre_like
+          = button_to 'Unlike', post_like_path(@post, pre_like), method: :delete
+      p #{@post.likes.count} #{@post.likes.count == 1 ? 'Like' : 'Likes'}
+      = render 'parent_comment_form', comment: @comment, url: post_comments_path(@post), parent_comment_id: nil
 
-== render @post
-== render 'comment_form', comment: @comment, url: post_comments_path(@post)
-= @comments.each do |c|
- = c.content
-br
-div
+      - @comments.each do |c|
+        .comment
+          p = c.content
+          - if @child_comments[c.id]
+            - @child_comments[c.id].pluck(:content).each do |child_comment|
+              p = child_comment
 
-  => link_to "Edit this post", edit_post_path(@post)
-  '|
-  =< link_to "Back to posts", root_path
+          = render 'reply_comment_form', comment: @comment, url: post_comments_path(@post), parent_comment_id: c.id
 
-  = button_to "Destroy this post", @post, method: :delete
+  .row
+    .col
+      = link_to "Edit this post", edit_post_path(@post), class: "btn btn-primary"
+      |
+      = link_to "Back to posts", root_path, class: "btn btn-secondary"
+      = button_to "Destroy this post", @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"

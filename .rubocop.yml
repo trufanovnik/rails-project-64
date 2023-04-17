@@ -2,3 +2,15 @@ inherit_from: .rubocop_todo.yml
 AllCops:
     NewCops: enable
     SuggestExtensions: false
+Style/Documentation:
+    Enabled: false
+Metrics/BlockLength:
+    Enabled: false
+Style/StringLiterals:
+    Enabled: false
+Style/HashSyntax:
+    Enabled: false
+Style/SymbolProc:
+    Enabled: false
+Style/SafeNavigation:
+    Enabled: false

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_417_183_657) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_17_185547) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -46,6 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 20_230_417_183_657) do
     t.string "category_id"
     t.string "post_comment_id"
     t.integer "count_of_likes"
+    t.integer "creator_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

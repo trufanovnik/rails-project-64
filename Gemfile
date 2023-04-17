@@ -11,6 +11,7 @@ gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 # Gem for authentication
 gem 'devise'
 
+gem 'ancestry'
 # Faker for tests data
 gem 'faker'
 

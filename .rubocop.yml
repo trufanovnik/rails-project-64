@@ -1,4 +1,13 @@
 inherit_from: .rubocop_todo.yml
+
+exclude:
+  - 'app/views/devise/**/*.slim'
+linters:
+  LineLength:
+    max: 160
+TrailingWhitespace:
+  Enabled: false
+
 AllCops:
     NewCops: enable
     SuggestExtensions: false

@@ -1,0 +1,9 @@
+---
+
+exclude:
+  - 'app/views/devise/**/*.slim'
+linters:
+  LineLength:
+    max: 160
+TrailingWhitespace:
+  Enabled: false

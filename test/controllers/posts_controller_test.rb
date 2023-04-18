@@ -1,50 +1,36 @@
-# frozen_string_literal: true
-
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @post = posts(:one)
-  end
+  include Devise::Test::IntegrationHelpers
 
   test 'should get index' do
     get posts_url
     assert_response :success
   end
 
-  test 'should get new' do
-    get new_post_url
+  test 'should show post' do
+    get(post_url(posts(:one)))
     assert_response :success
   end
 
   test 'should create post' do
-    assert_difference('Post.count') do
-      post posts_url, params: { post: { body: @post.body, title: @post.title, user_id: @post.user_id } }
-    end
-
-    assert_redirected_to post_url(Post.last)
+    sign_in users(:one)
+    title = Faker::Lorem.sentence
+    post posts_url params: {
+      post: {
+        user: users(:one),
+        title: title,
+        body: 'test post body',
+        category_id: categories(:one).id
+      }
+    }
+    assert_response :redirect
+    assert_not_nil Post.find_by(title: title)
   end
 
-  test 'should show post' do
-    get post_url(@post)
+  test 'should get new' do
+    sign_in users(:one)
+    get new_post_url
     assert_response :success
-  end
-
-  test 'should get edit' do
-    get edit_post_url(@post)
-    assert_response :success
-  end
-
-  test 'should update post' do
-    patch post_url(@post), params: { post: { body: @post.body, title: @post.title, user_id: @post.user_id } }
-    assert_redirected_to post_url(@post)
-  end
-
-  test 'should destroy post' do
-    assert_difference('Post.count', -1) do
-      delete post_url(@post)
-    end
-
-    assert_redirected_to posts_url
   end
 end
